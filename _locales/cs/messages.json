@@ -1,0 +1,16 @@
+{
+    "extName":{
+        "message": "Přeložit pomocí slovnik.cz",
+        "description" : "Extension name"
+    },
+
+    "extDesc": {
+        "message": "Přeloží slovo pomocí slovnik.cz",
+        "description" : "Extension name"
+    },
+
+    "title": {
+        "message": "Přeložit",
+        "description" : "Menu item text"
+    }
+}
