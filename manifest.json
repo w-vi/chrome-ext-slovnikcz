@@ -6,7 +6,6 @@
     "permissions": [
         "contextMenus",
         "http://www.slovnik.cz/",
-        "management"
     ],
     "icons": {
         "16": "slovnikcz-tiny.png",

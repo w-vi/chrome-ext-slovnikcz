@@ -1,12 +1,10 @@
 # chrome-ext-slovnikcz
 
-This is a very simple chrome extension to translate word under the
-mouse using the http://www.slovnik.cz/ site.
+This is a very simple chrome extension to translate a selected word using the http://www.slovnik.cz/ site.
 
-It pops up a window with translation from http://www.slovnik.cz/.
+It pops up a modal window with translation from http://www.slovnik.cz/
+to get rid of it just click the mouse or press escape.
 
 ## Screenshot
 
-None as yet.
-
-<!-- ![Screenshot](/screenshot.png?raw=true "Screenshot") -->
+![Screenshot](/screenshot.png?raw=true "Screenshot")
