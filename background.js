@@ -18,9 +18,11 @@ function onClickHandler(info, tab) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
             chrome.tabs.sendMessage(tab.id,
-                                    {action: "t", response: xhr.responseText},
+                                    {action: "t",
+                                     response: xhr.responseText},
                                     function(response) {});  
         }
     };
+    chrome.tabs.sendMessage(tab.id, {action: "p"}, function(response) {});  
     xhr.send();
 };

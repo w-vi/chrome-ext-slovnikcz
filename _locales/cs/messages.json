@@ -10,7 +10,12 @@
     },
 
     "title": {
-        "message": "Přeložit",
+        "message": "Slovnik.cz přeložit",
         "description" : "Menu item text"
+    },
+
+    "waitText": {
+        "message": "Načítám data ze serveru ...",
+        "description" : "Spinner text"
     }
 }

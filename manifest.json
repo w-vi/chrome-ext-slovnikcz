@@ -5,7 +5,7 @@
     "default_locale": "cs", 
     "permissions": [
         "contextMenus",
-        "http://www.slovnik.cz/",
+        "http://www.slovnik.cz/"
     ],
     "icons": {
         "16": "slovnikcz-tiny.png",
