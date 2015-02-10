@@ -4,6 +4,11 @@
         "description" : "Extension name"
     },
 
+    "extShortName":{
+        "message": "Překlad-slovnik.cz",
+        "description" : "Extension short name"
+    },
+
     "extDesc": {
         "message": "Přeloží slovo pomocí slovnik.cz",
         "description" : "Extension name"
