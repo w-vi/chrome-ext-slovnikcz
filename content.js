@@ -68,7 +68,7 @@ function buildFromResponse(resp) {
 }
 
 //show the translation result comming from background.js
-chrome.extension.onMessage.addListener(function(msg, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
     if (msg.action == 'p'){
         dlgParentDiv = document.createElement("div");
         dlgParentDiv.setAttribute("id", "wvislovnikcz");
