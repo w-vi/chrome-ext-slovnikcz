@@ -27,10 +27,7 @@ document.addEventListener("keyup",  function(e) {
 
 //build the modal window content from the slovnik.cz response
 function buildFromResponse(resp) {
-    var doc = document.implementation.createHTMLDocument("slovnik");
-    doc.open();
-    doc.write(resp);
-    doc.close();
+    const doc = new DOMParser().parseFromString(resp, 'text/html');
     
     var el = document.createElement("div");
     var ps = doc.getElementsByClassName('pair');
@@ -68,7 +65,7 @@ function buildFromResponse(resp) {
 }
 
 //show the translation result comming from background.js
-chrome.extension.onMessage.addListener(function(msg, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
     if (msg.action == 'p'){
         dlgParentDiv = document.createElement("div");
         dlgParentDiv.setAttribute("id", "wvislovnikcz");
