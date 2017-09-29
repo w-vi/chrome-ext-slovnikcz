@@ -1,16 +1,27 @@
-// Set up context menu at install time.
-chrome.runtime.onInstalled.addListener(function() {
-    context = "selection";
-    title = chrome.i18n.getMessage("title");
-    id = chrome.contextMenus.create({"title": title, "contexts":[context],
-                                         "id": "context" + context});
-});
+// Log creation status
+function onCreated() {
+  if (chrome.runtime.lastError) {
+    console.log(`Error: ${chrome.runtime.lastError}`);
+  } else {
+    console.log("Menu item slovnikcz-selection created.");
+  }
+}
 
-// add click event
-chrome.contextMenus.onClicked.addListener(onClickHandler);
+// Log all errors
+function onError(error) {
+  console.log(`Error: ${error}`);
+}
 
-// The onClicked callback function.
-function onClickHandler(info, tab) {
+// Create the context menu item.
+chrome.contextMenus.create({
+  id: "slovnikcz-selection",
+  title: chrome.i18n.getMessage("title"),
+  contexts: ["selection"]
+}, onCreated);
+
+
+// Add click event
+chrome.contextMenus.onClicked.addListener((info, tab) => {
     sText = info.selectionText;
     slovnikURL = "http://www.slovnik.cz/bin/mld.fpl?vcb=" + encodeURIComponent(sText) + "&dictdir=encz.en&lines=10&js=0";
     xhr = new XMLHttpRequest();
@@ -20,9 +31,9 @@ function onClickHandler(info, tab) {
             chrome.tabs.sendMessage(tab.id,
                                     {action: "t",
                                      response: xhr.responseText},
-                                    function(response) {});  
+                                    function(response) {});
         }
     };
-    chrome.tabs.sendMessage(tab.id, {action: "p"}, function(response) {});  
+    chrome.tabs.sendMessage(tab.id, {action: "p"}, function(response) {});
     xhr.send();
-};
+});
